@@ -42,7 +42,22 @@
 {% block header %}
     {% block header_navigation %}
     <section class="section top-nav has-background-grey-dark">
-        {% include 'partials/navigation.html.twig' %}
+        <div class="container">
+        <div class="columns is-gapless nav-links">
+          <div class="column is-flex">
+          {% macro nav_loop(page) %}
+          {% for p in page.children.visible %}
+            <li>
+              <a href="{{ p.url }}" class="nav-link level is-mobile">
+                  {{ p.menu }}
+              </a>
+            </li>
+          {% endfor %}
+          {% endmacro %}
+          </div>
+        </div>
+        <div class="column is-one-quarter"></div>
+      </div>
      </section> 
     {% endblock %}
 {% endblock %}

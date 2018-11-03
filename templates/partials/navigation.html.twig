@@ -3,19 +3,12 @@
     <div class="column is-flex">
     {% macro nav_loop(page) %}
     {% for p in page.children.visible %}
-        {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
-        {% if p.children.visible.count > 0 %}
-          <a href="{{ p.url }}" class="nav-link level is-mobile">
-            <p>Apps</p>
-          </a>
-            {% else %}
-              <li>
-                  <a href="{{ p.url }}" class="nav-link level is-mobile">
-                      {{ p.menu }}
-                  </a>
-              </li>
-            {% endif %}
-        {% endfor %}
+      <li>
+        <a href="{{ p.url }}" class="nav-link level is-mobile">
+            {{ p.menu }}
+        </a>
+      </li>
+    {% endfor %}
     {% endmacro %}
     </div>
   </div>

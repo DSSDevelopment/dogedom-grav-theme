@@ -31,6 +31,13 @@
 {% endblock head%}
 </head>
 <body>
+<section class="hero is-primary is-medium is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 id="page-title" class="title is-1">Dogedom StudioS</h1>
+        </div>
+    </div>
+</section>
 
 {% block header %}
     {% block header_navigation %}
@@ -46,7 +53,7 @@
         <div class="columns is-gapless reverse-row-order">
             <div class="sidebar column is-one-quarter">
                 <div class="sidebar-content">
-                    <img class="sidebar-image" src="bulma-start.png">
+                    <img class="sidebar-image" src="{{ url('theme://images/bulma-start.png') }}">
                     <div class="ticker">
                        
                     </div>

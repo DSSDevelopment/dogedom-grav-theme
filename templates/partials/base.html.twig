@@ -1,0 +1,67 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="icon" type="image/png" href="{{ url('user://images/favicon.png') ?: url('theme://images/favicon.png') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Habibi|Lato" rel="stylesheet">
+
+    {% block stylesheets %}
+        {% if config.theme.production_mode %}
+            {% do assets.addCss('theme://css-compiled/main.min.css', 98) %}
+        {% else  %}
+            {% do assets.addCss('theme://css-compiled/main.css', 98) %}
+        {% endif  %}
+    {% endblock %}
+    {{ assets.css() }} 
+ 
+    {% block javascripts %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head%}
+</head>
+<body>
+
+{% block header %}
+    {% block header_navigation %}
+    <section class="section top-nav has-background-grey-dark">
+        {% include 'partials/navigation.html.twig' %}
+     </section> 
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+<section class="section main-body">
+    <div class="container">
+        <div class="columns is-gapless reverse-row-order">
+            <div class="sidebar column is-one-quarter">
+                <div class="sidebar-content">
+                    <img class="sidebar-image" src="bulma-start.png">
+                    <div class="ticker">
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+              {% block content %}{% endblock %} 
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+</body>
+</html>

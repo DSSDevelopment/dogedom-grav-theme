@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+$variable-columns: false;
+
+// 2. Set your own initial variables
+// Update the blue shade, used for links
+$blue: rgb(2, 31, 166);
+$darkGray: rgb(98, 98, 118);
+$highlight: rgb(255, 255, 153);
+$primary: $blue;
+$footer-background-color: $darkGray;
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+.reverse-row-order {
+    flex-direction: row-reverse;
+}
+
+.container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+footer p {
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.sidebar {
+    background-color: $blue;
+}
+
+.sidebar-content {
+    padding: 1em !important;
+    color: white;
+}
+
+.top-nav {
+    height: 18px;
+    overflow: visible;
+    padding: 0 !important;
+    margin: 0;
+    background-color: $darkGray;
+}
+
+.nav-links {
+    padding-left: 1em;
+}
+
+.nav-link-container {
+    position: relative;
+    height: 24px;
+    overflow: visible;
+}
+
+.nav-link {
+    z-index: 100;
+    display: inline-block;
+    justify-content: center !important;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: 6px solid $darkGray;
+    margin-top: calc(-42px + 9px);
+    margin-left: 8px;
+    margin-right: 8px;
+    background: white;
+    text-align: center;
+}
+
+.nav-link:hover {
+    background: $highlight;
+    cursor: pointer;
+}
+
+.sidebar-image {
+    z-index: 100;
+    margin-top: calc(-50% - 24px);
+    border-radius: 50%;
+    border: 6px solid $darkGray;
+}
+
+.ticker {
+    margin-top: 24px;
+}
+
+.main-body {
+    padding: 0 !important;
+}
+
+.article {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+    padding-left: 12px;
+    padding-right: 12px;
+    max-width: 848px;
+    margin: auto;
+}
+
+.article p {
+    font-family: 'Habibi', serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lato', sans-serif;
+}
+
+a {
+    color: rgb(2, 31, 166);
+    font-family: 'Lato', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .sidebar-content {
+        padding-top: 3em !important;
+    }
+    .sidebar-image {
+        width: 100px;
+        margin-top: -300px;
+    }
+    .ticker {
+        margin-top: 0;
+    }
+}
+
+// 4. Import the rest of Bulma
+
+
+@import "../node_modules/bulma/bulma";

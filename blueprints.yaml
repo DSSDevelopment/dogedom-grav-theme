@@ -1,0 +1,33 @@
+name: Dogedom
+version: 1.0.0
+description: Mobile responsive theme for Dogedom StuioS.
+icon: rebel
+author:
+  name: Derek Sanchez
+  email: derek.scott.sanchez@gmail.com
+homepage: https://dogedomstudios.com
+demo: https://dogedomstudios.com
+keywords: grav, theme, dogedom, app, mobile-first, bulma
+bugs: https://dogedomstudios.com
+readme: https://dogedomstudios.com
+license: Proprietary
+
+form:
+  validation: loose
+
+  fields:
+    production_mode:
+      type: toggle
+      label: Production mode
+      help: When enabled, Dogedom-Theme will render with minified CSS
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    title_in_menu:
+      type: text
+      label: Title in menu
+      help: Provide HTML String with inline styles here to easily style the title in the menu

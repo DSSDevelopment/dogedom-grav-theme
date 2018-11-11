@@ -2,11 +2,9 @@
   <div class="columns is-gapless nav-links">
     <div class="column is-flex">
     {% for p in taxonomy.findTaxonomy({'category':'menu-item'}) %}
-      <li>
-        <a href="{{ p.url }}" class="nav-link level is-mobile">
-            {{ p.menu }}
-        </a>
-      </li>
+      <a href="{{ p.url }}" class="nav-link level is-mobile">
+          <p>{{ p.menu }}</p>
+      </a>
     {% endfor %}
     </div>
   </div>

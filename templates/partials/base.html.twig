@@ -40,16 +40,12 @@
 </section>
 
 {% block header %}
-    {% block header_navigation %}
-    <section class="section top-nav has-background-grey-dark">
-      {% block header_navigation %}
-      <section class="section top-nav has-background-grey-dark">
-          {% include 'partials/navigation.html.twig' %}
-      </section> 
-      {% endblock %}
-      </div>
-     </section> 
-    {% endblock %}
+  {% block header_navigation %}
+  <section class="section top-nav has-background-grey-dark">
+      {% include 'partials/navigation.html.twig' %}
+  </section> 
+  {% endblock %}
+  </div>
 {% endblock %}
 
 {% block body %}

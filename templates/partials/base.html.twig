@@ -42,19 +42,11 @@
 {% block header %}
     {% block header_navigation %}
     <section class="section top-nav has-background-grey-dark">
-        <div class="container">
-        <div class="columns is-gapless nav-links">
-          <div class="column is-flex">
-          {% for p in page.collection %}
-            <li>
-              <a href="{{ p.url }}" class="nav-link level is-mobile">
-                  {{ p.menu }}
-              </a>
-            </li>
-          {% endfor %}
-          </div>
-        </div>
-        <div class="column is-one-quarter"></div>
+      {% block header_navigation %}
+      <section class="section top-nav has-background-grey-dark">
+          {% include 'partials/navigation.html.twig' %}
+      </section> 
+      {% endblock %}
       </div>
      </section> 
     {% endblock %}
@@ -66,7 +58,7 @@
         <div class="columns is-gapless reverse-row-order">
             <div class="sidebar column is-one-quarter">
                 <div class="sidebar-content">
-                    <img class="sidebar-image" src="{{ url('theme://images/bulma-start.png') }}">
+                    <img class="sidebar-image" src="{{ url('theme://images/profile_square.jpg') }}">
                     <div class="ticker">
                        
                     </div>
